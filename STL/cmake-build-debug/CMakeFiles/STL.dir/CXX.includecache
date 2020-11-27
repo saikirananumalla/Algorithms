@@ -1,0 +1,48 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/saikirun/DS Prac/STL/main.cpp
+iostream
+-
+array
+-
+numeric
+-
+algorithm
+-
+vector
+-
+set
+-
+deque
+-
+map
+-
+forward_list
+-
+list
+-
+queue
+-
+stack
+-
+unordered_set
+-
+unordered_map
+-
+iterator
+-
+regex
+-
+functional
+-
+string.h
+-
+exception
+-
+
