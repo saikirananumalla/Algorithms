@@ -1,0 +1,52 @@
+{
+  "name" : "E2E-adapterlqiwii",
+  "description" : "adapter for internal destination",
+  "sourceModelName" : "feeds.BNY_EAGLE_INVESTONE_NAV_SUMMARY",
+  "mode" : "csv",
+  "destinationTenantId" : "e2eflex",
+  "destinationOrgId" : "eagle",
+  "destinationModelName" : "feeds.BNY_EAGLE_INVESTONE_NAV_SUMMARY",
+  "type" : "internal",
+  "location" : "/bny/eagle/INVESTONE_NAV_SUMMARY",
+  "fetchSize" : 5,
+  "queryTimeOut" : 30,
+  "compression" : true,
+  "retryInterval" : 1,
+  "deliveryAttempts" : 3
+}
+
+
+x-eagle-context is demo
+
+
+{
+  "description": "adapter for internal destination",
+  "sourceModelName": "EagleStandardMobius.CodeValue",
+  "mode": "csv",
+  "destinationTenantId": "moffice",
+  "destinationOrgId": "eagle",
+  "destinationModelName": "EagleStandardMobius.CodeValue",
+  "type": "internal",
+  "fetchSize": 0,
+  "queryTimeOut": 0,
+  "compression": false,
+  "retryInterval": 1,
+  "deliveryAttempts": 1,
+  "adapterId": 4,
+  "name": "mtr2"
+}
+
+x-eagle-context moffice
+
+cron expr 1 * * * * ? *
+
+f472d9ca-2a0b-4ca2-8207-fa147f737fb5 test_adapter schedule id
+
+cron expr 0/30 * * ? * * * Every 30 seconds starting at :00 second after the minute
+
+1 31 13 2 FEB ? 2020 At 13:31:01pm, on the 2nd day, in February, in 2020
+
+
+SELECT adapter.adapter_id, adapter.tenant_id as sourcetenant, data_selector.model_name as sourcemodel, adapter_destination.tenant_id as destinationtenant, destination_model 
+FROM eagle_ci_publisher_svc.adapter join eagle_ci_publisher_svc.adapter_destination 
+on adapter.adapter_id= adapter_destination.adapter_id join eagle_ci_publisher_svc.data_selector on adapter.data_selector_id=data_selector.data_selector_id;
